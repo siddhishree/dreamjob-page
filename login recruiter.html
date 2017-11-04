@@ -40,23 +40,35 @@
                     </ul>
       </div>
     </nav>
-      <div style="font-family:'Saira Semi Condensed';text-align: center; align-items: center; color: azure;margin-top: 150px;">
-      <div style="font-size: 50px;"> <p> New to Dreamjob?<br> Get started today...</p>
-          <p><a class="btn btn-lg btn-primary" href="login%20recruiter.html" role="button">Sign up as Recruiter</a></p>
-          <p><a class="btn btn-lg btn-info" href="login-user.html" role="button">Sign up as Jobseeker</a></p>
-          </div>
-          <hr width="50%" align="center" color="white">
-          <h1>Existing customers login here</h1>
-      <form>
-          Username <input type="text" placeholder="Username"><br><br>
-          Password <input type="password" placeholder="Password"><br><br>
-          <input type="radio" name="type" checked>Recruiter &nbsp; &nbsp; &nbsp;
-          <input type="radio" name="type">Job-seeker<br><br>
-          <a class="btn btn-primary" href="#" role="button">Login</a>
+      <div style="display: block; margin-top: 50px; margin-left: 30px;margin left: 30px;color: azure;">
+      <form name="recprofile">
+          <h2>Create Recruiter Profile</h2><br>
+          <div style="display: block; margin: 5px 500px 5px 5px;    padding: 20px 0px 20px 30px;background: #efefef;color: darkgrey;font-size:30px; border-color: white;border-width: thick;border-style: solid">
+         <h4> Professional Details</h4><br>
+          <div style="font-size: 15px;" >
+          <input type="text" placeholder="Company name" id="comp"> &nbsp; &nbsp; &nbsp;
+          <input type="text" placeholder="Job Title" id="jobtitle"><br><br>
+          <textarea placeholder="Keywords for Job Title" rows="4" cols="50" id="keyword"></textarea><br><br>
+              <textarea placeholder="Job Description" rows="4" cols="50" id="description"></textarea><br><br>
+              <input type="text" placeholder="Minimum experience required(years)" size="35" id="expmin" ><br><br>
+              <input type="text" placeholder="Maximum experience required(years)" size="35" id="expmax"><br><br>
+              <input type="text" placeholder="Annual ctc(lpa)" id="ctc" >&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="Number of vacancies" id="vacancies" ><br><br>
+              <input type="text" placeholder="Qualification (UG)" id="ug" ><br><br>
+              <input type="text" placeholder="Qualification(PG)" id="pg" ><br><br>
+              <input type="text" placeholder="Qualificaion(PHD)" id="phd" ><br><br>
+              <h5>Recruiter Details</h5><br>
+              <input type="text" placeholder="Name" id="recname" >&nbsp;&nbsp;&nbsp;
+              <input type="email" placeholder="Email" id="email" ><br><br>
+              <input type="text" placeholder="Contact no." id="contact" ><br><br>
+              <input type="submit" class="btn btn-primary">
+              </div></div>
           </form>
       </div>
       
-     
+      
+      
+      
        <hr class="featurette-divider">
 
       
@@ -64,7 +76,7 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="float-right"><a href="login-signup.html">Back to top</a></p>
+        <p class="float-right"><a href="login%20recruiter.html">Back to top</a></p>
         <p>© 2017 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
       </footer>
     </body>
