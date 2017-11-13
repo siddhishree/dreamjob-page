@@ -9,10 +9,10 @@
     <title>Find Your Dream Job</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./Carousel Template for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+    <link href="../main/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./Carousel Template for Bootstrap_files/carousel.css" rel="stylesheet">
+    <link href="../main/carousel.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
   </head>
@@ -47,9 +47,9 @@
           </div>
           <hr width="50%" align="center" color="white">
           <h1>Existing customers login here</h1>
-      <form>
-          Username <input type="text" placeholder="Username"><br><br>
-          Password <input type="password" placeholder="Password"><br><br>
+      <form action="checklogin.php" method="POST">
+          Username <input name="username" type="text" placeholder="Username"><br><br>
+          Password <input name="password" type="password" placeholder="Password"><br><br>
           <input type="radio" name="type" checked>Recruiter &nbsp; &nbsp; &nbsp;
           <input type="radio" name="type">Job-seeker<br><br>
           <a class="btn btn-primary" href="#" role="button">Login</a>
