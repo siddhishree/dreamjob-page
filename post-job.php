@@ -47,34 +47,26 @@
          <h4> Professional Details</h4><br>
           <div style="font-size: 15px;" >
           <p><span class="error">* required field.</span></p>
-          <input type="text" placeholder="Company name" id="comp"> <span class="error">*</span>&nbsp; &nbsp; &nbsp;
-          <input type="text" placeholder="Job Title" id="jobtitle"><br><br>
-          <textarea placeholder="Keywords for Job Title" rows="4" cols="50" id="keyword"></textarea><br><br>
-              <textarea placeholder="Job Description" rows="4" cols="50" id="description"></textarea><br><br>
-              <input type="text" placeholder="Minimum experience required(years)" size="35" id="expmin" > <span class="error">*</span><br><br>
-              <input type="text" placeholder="Maximum experience required(years)" size="35" id="expmax"><br><br>
-              <input type="text" placeholder="Annual ctc(lpa)" id="ctc" > <span class="error">*</span>&nbsp;&nbsp;&nbsp;
-              <input type="text" placeholder="Number of vacancies" id="vacancies" ><span class="error">*</span><br><br>
-              <input type="text" placeholder="Qualification (UG)" id="ug" ><br><br>
-              <input type="text" placeholder="Qualification(PG)" id="pg" ><br><br>
-              <input type="text" placeholder="Qualificaion(PHD)" id="phd" ><br><br>
+          <input type="text" placeholder="Association ID" name="assc"> <span class="error">*</span><br><br>
+          <input type="text" placeholder="Job Title" name="jobt"><br><br>
+          <textarea placeholder="Keywords for Job Title" rows="4" cols="50" name="keyw"></textarea><br><br>
+              <textarea placeholder="Job Description" rows="4" cols="50" name="descrip"></textarea><br><br>
+              <input type="text" placeholder="Minimum experience required(years)" size="35" name="expmin" > <span class="error">*</span><br><br>
+              <input type="text" placeholder="Maximum experience required(years)" size="35" name="expmax"><br><br>
+              <input type="text" placeholder="Annual ctc(lpa)" name="ctc" > <span class="error">*</span>&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="Number of vacancies" name="vac" ><span class="error">*</span><br><br>
+              <input type="text" placeholder="Qualification (UG)" name="ug" ><br><br>
+              <input type="text" placeholder="Qualification(PG)" name="pg" ><br><br>
+              <input type="text" placeholder="Qualificaion(PHD)" name="phd" ><br><br>
               <h5>Recruiter Details</h5><br>
-              <input type="text" placeholder="Name" id="recname" ><span class="error">*</span>&nbsp;&nbsp;&nbsp;
-              <input type="email" placeholder="Email" id="email" ><span class="error">*</span><br><br>
-              <input type="text" placeholder="Contact no." id="contact" ><span class="error">*</span><br><br>
+              <input type="text" placeholder="Name" name="recname" ><span class="error">*</span>&nbsp;&nbsp;&nbsp;
+              <input type="email" placeholder="Email" name="email" ><span class="error">*</span><br><br>
+              <input type="text" placeholder="Contact no." name="contact" ><span class="error">*</span><br><br>
               <input type="submit" value="Post" class="btn btn-primary">
               </div></div>
           </form>
       </div>
-      
-      
-      
-      
        <hr class="featurette-divider">
-
-      
-
-
       <!-- FOOTER -->
       <footer>
         <p class="float-right"><a href="login-recruiter.php">Back to top</a></p>
@@ -82,3 +74,25 @@
       </footer>
 </body>
 </html>
+<?php
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $sql=mysqli_connect("localhost","batman","J0K3R","dreamjob") or die(mysqli_error());
+        $assc=$_POST['assc'];
+        
+        $query=mysqli_query($sql,"select * from association_login where assoc_id='$assc'");
+        
+        $exists = mysqli_num_rows($query); //Checks if username exists
+	if($exists > 0) //IF there are no returning rows or no existing username
+	{
+                $comp=$_POST['comp'];$jobt=$_POST['jobt'];$keyw=$_POST['keyw'];$descrip=$_POST['descrip'];$expmin=$_POST['expmin'];$expmax=$_POST['expmax'];$ctc=$_POST['ctc'];$vac=$_POST['vac'];$ug=$_POST['ug'];$pg=$_POST['pg'];$phd=$_POST['phd'];$recname=$_POST['recname'];$email=$_POST['email'];$contact=$_POST['contact']; 
+        mysqli_query($sql,"insert into job_post values (rand(100000,999999),'$assc','$jobt','$keyw','$descrip','$expmin','$expmax','$ctc','$vac','$ug','$pg','$phd','$recname','$email','$contact')"); 
+        
+		Print '<script>alert("Request Sent!!");</script>'; //Prompts the user
+		Print '<script>window.location.assign("post-job.php");</script>'; // redirects to login.php
+        }
+        else{
+		Print '<script>alert("Association Not Present!");</script>'; //Prompts the user
+		Print '<script>window.location.assign("post-job.php");</script>'; // redirects to login.php
+        }
+}
+?> 

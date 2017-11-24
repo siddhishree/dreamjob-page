@@ -46,10 +46,6 @@
 </html>
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $username=$_POST["username"];
-        $password=$_POST["password"];
-        $bool=true;
-
         $sql=mysqli_connect("localhost","batman","J0K3R","dreamjob") or die(mysqli_error());
         $fname=$_POST['fname'];$mname=$_POST['mname'];$lname=$_POST['lname'];$ug=$_POST['ug'];$pg=$_POST['pg'];$phd=$_POST['phd'];$jobt=$_POST['jobtitle'];$ex=$_POST['exp'];$cmp=$_POST['comp1'];$frm=$_POST['from1'];$to=$_POST['to1'];$skill=$_POST['skill'];$mail=$_POST['email'];$cont=$_POST['contact'];$addr=$_POST['address'];$webs=$_POST['website'];
 
