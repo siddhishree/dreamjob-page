@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
     <title>Find Your Dream Job</title>
 
@@ -15,15 +15,7 @@
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
   </head>
-<?php
-	session_start(); //starts the session
-	if($_SESSION['user']){ //checks if user is logged in
-        }
-	else{
-		header("location:index.php"); // redirects if user is not logged in
-	}
-	$user = $_SESSION['user']; //assigns user value
-	?>
+
 
   <body style="background-image: url(images/job.jpg); background-size: cover">
     <header>
@@ -56,10 +48,10 @@
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-            <a class="nav-link active" href="#"><?php echo "$user"?><span class="sr-only">(current)</span></a>
+            <a class="nav-link " href="#">Not<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Jobs Applied</a>
+              <a class="nav-link active" href="#">Jobs Applied</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Resume</a>
@@ -68,42 +60,10 @@
               <a class="nav-link" href="scripts/logout.php">Log Out</a>
             </li>
           </ul>
-
-          
-
-        </nav>
-
-        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-            <h3>Job Search</h3>
-             <div style="font-size: 20px;">
-            <form>
-               
-                <input type="text" placeholder="Skills">
-                <select placeholder="Experience">
-                    <option value="" disabled selected> &nbsp;&nbsp;Experience&nbsp;&nbsp; </option>
-                     <?php
-			$x = 1;
-			while($x <= 20) {
-    				echo "<option>".$x."<option>";
-    				$x++;
-			}
-			?>                     
-                    </select>
-                <select >
-                    <option value="" disabled selected> &nbsp;&nbsp;Salary(In LPA)&nbsp;&nbsp; </option>
-                    <?php
-			$x = 1;
-			while($x <= 20) {
-    				echo "<option>".$x."<option>";
-    				$x++;
-			}
-			?>
-                    </select> &nbsp;&nbsp;<br><br>
-                <a class="btn btn-lg btn-primary" href="#" role="button">Search</a>
-            </form></div>
-
-        </main>
+</nav>
+          <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Jobs Applied</h1>
+            </div>
+         
       </div>
-    </div>
-
-</body></html>
+    </body>
+</html>
