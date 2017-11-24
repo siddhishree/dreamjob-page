@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
     <title>Home</title>
 
@@ -24,7 +25,7 @@
 	$user = $_SESSION['user']; //assigns user value
 	?>
 
-  <body>
+  <body style="background-image: url(images/job.jpg); background-size: cover">
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Dreamjob</a>
@@ -34,17 +35,17 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
+              <a class="nav-link" href="#">Recruiters</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Job Seekers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fixed-right" href="#">Help</a>
+              <a class="nav-link fixed-right" href="login-signup.html">Login/Signup</a>
             </li>
           </ul>
         </div>
@@ -53,41 +54,56 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-          <ul class="nav nav-pills flex-column tab-group">
-            <li class="nav-item tab active">
-            <a class="nav-link active" href="#home"><?php echo "$user"?> <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item tab">
-              <a class="nav-link" href="#search">Search</a>
-            </li>
-          </ul>
-
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="resume.php">Resume</a>
+            <a class="nav-link active" href="#"><?php echo "$user"?><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#">Jobs Applied</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resume</a>
+            </li>
+               <li class="nav-item">
               <a class="nav-link" href="scripts/logout.php">Log Out</a>
             </li>
           </ul>
 
+          
+
         </nav>
+
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-        <div class="tab-content" >
-                <div id="home">
-                        <h1>Dashboard</h1>
-                </div>
-        </div>
-        <div class="tab-content">
-                <div id="search">
-                 <h1>SEARCH</h1>
-                </div> 
-        </div>
+            <h3>Job Search</h3>
+             <div style="font-size: 20px;">
+            <form>
+               
+                <input type="text" placeholder="Skills">
+                <select placeholder="Experience">
+                    <option value="" disabled selected> &nbsp;&nbsp;Experience&nbsp;&nbsp; </option>
+                     <?php
+			$x = 1;
+			while($x <= 20) {
+    				echo "<option>".$x."<option>";
+    				$x++;
+			}
+			?>                     
+                    </select>
+                <select >
+                    <option value="" disabled selected> &nbsp;&nbsp;Salary(In LPA)&nbsp;&nbsp; </option>
+                    <?php
+			$x = 1;
+			while($x <= 20) {
+    				echo "<option>".$x."<option>";
+    				$x++;
+			}
+			?>
+                    </select> &nbsp;&nbsp;<br><br>
+                <a class="btn btn-lg btn-primary" href="#" role="button">Search</a>
+            </form></div>
+
         </main>
       </div>
     </div>
 
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
- <script src="scripts/tabs.js"></script>
-</body>
-</html>
+</body></html>
