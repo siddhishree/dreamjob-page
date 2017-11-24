@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
     <title>Home</title>
 
@@ -54,27 +53,18 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-          <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-            <a class="nav-link active" href="#"><?php echo "$user"?> <span class="sr-only">(current)</span></a>
+          <ul class="nav nav-pills flex-column tab-group">
+            <li class="nav-item tab active">
+            <a class="nav-link active" href="#home"><?php echo "$user"?> <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Search</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Resume</a>
+            <li class="nav-item tab">
+              <a class="nav-link" href="#search">Search</a>
             </li>
           </ul>
 
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Not Decided</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Not Decided</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Not Decided</a>
+              <a class="nav-link" href="resume.php">Resume</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="scripts/logout.php">Log Out</a>
@@ -82,12 +72,22 @@
           </ul>
 
         </nav>
-
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-          <h1>Dashboard</h1>
-
+        <div class="tab-content" >
+                <div id="home">
+                        <h1>Dashboard</h1>
+                </div>
+        </div>
+        <div class="tab-content">
+                <div id="search">
+                 <h1>SEARCH</h1>
+                </div> 
+        </div>
         </main>
       </div>
     </div>
 
-</body></html>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+ <script src="scripts/tabs.js"></script>
+</body>
+</html>
