@@ -39,10 +39,10 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Recruiters</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Job Seekers</a>
+              <a class="nav-link" href="post-job.php">Post A Job</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link " href="home.php">JobSeekers</a>
             </li>
           </ul>
         </div>

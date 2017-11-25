@@ -32,7 +32,7 @@
             <a class="nav-link" href="index.html">Home </a>
           </li>
           <li class="nav-item  ">
-            <a class="nav-link " href="#">JobSeekers</a>
+            <a class="nav-link " href="home.php">JobSeekers</a>
           </li>
             <li class="nav-item active">
             <a class="nav-link " href="login-signup.php">Login/Signup</a>
