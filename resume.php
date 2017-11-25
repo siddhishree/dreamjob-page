@@ -16,7 +16,7 @@
 
 
 <body>
-<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post"> 
+<form action="resume.html" method="post"> 
           <h2>Let's Create Your Profile</h2>
           <h3><?php echo "$user"?></h3>
         <br>
