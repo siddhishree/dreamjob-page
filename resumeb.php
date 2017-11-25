@@ -28,6 +28,19 @@
         dd.clear { float: none; margin: 0; height: 15px; }
      </style>
 </head>
+<?php
+	session_start(); //starts the session
+	if($_SESSION['user']){ //checks if user is logged in
+        }
+	else{
+		header("location:login-signup.html"); // redirects if user is not logged in
+	}
+	$user = $_SESSION['user']; //assigns user value
+        
+        $sql=mysqli_connect("localhost","batman","J0K3R","dreamjob") or die(mysqli_error()); 
+        $row=mysqli_query($sql,"select * from user_resume where username='$user'");
+?>
+
 
 <body>
 
@@ -39,12 +52,12 @@
         
             <!-- Microformats! -->
         
-            <h1 class="fn">C'thulhu</h1>
-        
+          <!--  <h1 class="fn"><?php echo($row['First_Name'].' '.$row['Middle_Name'].' '.$row['Last_Name'])?></h1>
+        -->
             <p>
-                Contact: <span class="tel">555-666-7777</span><br />
-                Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a><br>
-                Website: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
+            Contact: <span class="tel"><?php echo $row['contact'] ?></span><br />
+                Email: <a class="email" href="<?php echo $row['email'] ?>"><?php echo($row['email'])?></a><br>
+                Website: <a class="email" href="<?php echo $row['website'] ?>"><?php echo($row['website'])?></a>
             </p>
         </div>
                 
@@ -64,10 +77,9 @@
             
             <dt>Education</dt>
             <dd>
-                <h2>Withering Madness University - Planet Vhoorl</h2>
-                <p><strong>UG:</strong> Public Relations<br />
-                   <strong>PG:</strong> Scale Tending<br>
-                <strong>Phd:</strong> Scale Tending</p>
+                <p><strong>UG:</strong> <?php echo($row['education_1'])?><br />
+                   <strong>PG:</strong> <?php echo($row['education_2'])?><br>
+                <strong>Phd:</strong> <?php echo($row['education_3'])?></p>
             </dd>
             
             <dd class="clear"></dd>
@@ -94,9 +106,9 @@
                 
                 <h2>Previous Job Details<span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
                 <ul>
-                   <p> <strong>Company:</strong> Scale Tending<br>
-                    <strong>Duration-From:</strong> Scale Tending<br>
-                    <strong>Duration-To:</strong> Scale Tending</p>
+                   <p> <strong>Company:</strong> <?php echo($row['company_a'])?><br>
+                    <strong>Duration-From:</strong> <?php echo($row['duration_a_from'])?><br>
+                    <strong>Duration-To:</strong> <?php echo($row['duration_a_till'])?></p>
                 
                 </ul> 
             </dd>
@@ -104,12 +116,12 @@
             <dd class="clear"></dd>
             
             <dt>Job Title</dt>
-            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+            <dd><?php echo($row['job_title'])?></dd>
             
             <dd class="clear"></dd>
             
             <dt>Address</dt>
-            <dd>Available on request</dd>
+            <dd><?php echo($row['address'])?></dd>
             
             <dd class="clear"></dd>
         </dl>

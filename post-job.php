@@ -84,8 +84,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $exists = mysqli_num_rows($query); //Checks if username exists
 	if($exists > 0) //IF there are no returning rows or no existing username
 	{
-                $comp=$_POST['comp'];$jobt=$_POST['jobt'];$keyw=$_POST['keyw'];$descrip=$_POST['descrip'];$expmin=$_POST['expmin'];$expmax=$_POST['expmax'];$ctc=$_POST['ctc'];$vac=$_POST['vac'];$ug=$_POST['ug'];$pg=$_POST['pg'];$phd=$_POST['phd'];$recname=$_POST['recname'];$email=$_POST['email'];$contact=$_POST['contact']; 
-        mysqli_query($sql,"insert into job_post values (rand(100000,999999),'$assc','$jobt','$keyw','$descrip','$expmin','$expmax','$ctc','$vac','$ug','$pg','$phd','$recname','$email','$contact')"); 
+                $jobid=mt_rand(10000,999999);$jobt=$_POST['jobt'];$keyw=$_POST['keyw'];$descrip=$_POST['descrip'];$expmin=$_POST['expmin'];$expmax=$_POST['expmax'];$ctc=$_POST['ctc'];$vac=$_POST['vac'];$ug=$_POST['ug'];$pg=$_POST['pg'];$phd=$_POST['phd'];$recname=$_POST['recname'];$email=$_POST['email'];$contact=$_POST['contact']; 
+        mysqli_query($sql,"insert into job_post values ('$jobid','$assc','$jobt','$keyw','$descrip','$expmin','$expmax','$ctc','$vac','$ug','$pg','$phd','$recname','$email','$contact')"); 
         
 		Print '<script>alert("Request Sent!!");</script>'; //Prompts the user
 		Print '<script>window.location.assign("post-job.php");</script>'; // redirects to login.php

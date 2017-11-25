@@ -20,7 +20,7 @@
 	if($_SESSION['user']){ //checks if user is logged in
         }
 	else{
-		header("location:index.php"); // redirects if user is not logged in
+		header("location:login-signup.html"); // redirects if user is not logged in
 	}
 	$user = $_SESSION['user']; //assigns user value
 	?>
@@ -44,9 +44,6 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Job Seekers</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link fixed-right" href="login-signup.html">Login/Signup</a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -62,9 +59,12 @@
               <a class="nav-link" href="#">Jobs Applied</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Resume</a>
+              <a class="nav-link" href="resume.php">Fill Resume</a>
             </li>
-               <li class="nav-item">
+            <li class="nav-item">
+              <a class="nav-link" href="resumeb.php">Build Resume</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="scripts/logout.php">Log Out</a>
             </li>
           </ul>
